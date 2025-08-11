@@ -1,67 +1,105 @@
-# HeartDiseasePrediction
-Heart Disease Prediction Using Machine Learning
-Project Overview
-This project aims to predict whether a person is suffering from heart disease using machine learning techniques. The dataset used is the Heart Disease dataset, which contains various features related to patient health and a target variable indicating the presence of heart disease.
-Steps Involved
+# Heart Disease Prediction Using Machine Learning
 
-Data Gathering: The dataset is loaded using pandas from a CSV file named HeartDisease.csv.
-Data Preparation: Initial exploration is performed using pandas functions like head(), tail(), describe(), and info() to understand the dataset's structure and statistics.
-Data Exploration: Visualizations such as histograms, bar plots, correlation matrices, and pair plots are used to analyze the relationships between features and the target variable.
-Data Preprocessing: The dataset is checked for null values and outliers. Categorical variables are converted to numerical format using one-hot encoding with pd.get_dummies().
-Data Transformation: Numerical features are standardized using StandardScaler to ensure all features are on the same scale.
-Model Building: The dataset is split into training and testing sets (80/20 split). Four machine learning models are trained and evaluated:
-Logistic Regression
-Support Vector Machine (SVM)
-Naive Bayes (GaussianNB)
-Decision Tree Classifier
+## Project Overview
+This repository contains a machine learning project aimed at predicting heart disease in patients using various health-related features. The dataset used is the Heart Disease dataset, and multiple machine learning models are implemented to classify whether a patient has heart disease.
 
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Steps Involved](#steps-involved)
+- [Dataset](#dataset)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Key Observations](#key-observations)
+- [File Structure](#file-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-Model Evaluation: Model performance is assessed using accuracy scores, classification reports, and confusion matrices for both training and testing datasets.
-Prediction: The trained Support Vector Classifier is used to make predictions on sample data, determining whether a patient has heart disease.
+## Steps Involved
+1. **Data Gathering**: Load the dataset (`HeartDisease.csv`) using pandas.
+2. **Data Preparation**: Perform exploratory data analysis (EDA) using pandas functions like `head()`, `tail()`, `describe()`, and `info()` to understand the dataset.
+3. **Data Exploration**: Visualize data with histograms, bar plots, correlation matrices, and pair plots to identify relationships between features and the target variable.
+4. **Data Preprocessing**: Check for null values and outliers, and convert categorical variables to numerical using one-hot encoding (`pd.get_dummies()`).
+5. **Data Transformation**: Standardize numerical features using `StandardScaler` to ensure uniform scaling.
+6. **Model Building**: Split the dataset into training (80%) and testing (20%) sets. Train and evaluate the following models:
+   - Logistic Regression
+   - Support Vector Machine (SVM)
+   - Naive Bayes (GaussianNB)
+   - Decision Tree Classifier
+7. **Model Evaluation**: Assess model performance using accuracy scores, classification reports, and confusion matrices.
+8. **Prediction**: Use the trained Support Vector Classifier to predict heart disease for sample inputs.
 
-Key Observations
+## Dataset
+The dataset (`HeartDisease.csv`) includes the following features:
+- `age`: Patient's age
+- `gender`: Patient's gender
+- `chest_pain`: Type of chest pain
+- `rest_bps`: Resting blood pressure
+- `cholestrol`: Cholesterol level
+- `fasting_blood_sugar`: Fasting blood sugar level
+- `rest_ecg`: Resting electrocardiographic results
+- `thalach`: Maximum heart rate achieved
+- `exer_angina`: Exercise-induced angina
+- `old_peak`: ST depression induced by exercise
+- `slope`: Slope of the peak exercise ST segment
+- `ca`: Number of major vessels colored by fluoroscopy
+- `thalassemia`: Thalassemia type
+- `target`: Presence of heart disease (0 = No, 1 = Yes)
 
-Features like chest_pain, rest_ecg, exer_angina, slope, ca, and thalassemia show significant correlations with the target variable.
-The Support Vector Classifier outperformed other models in terms of accuracy on the test dataset.
+## Dependencies
+The project requires the following Python libraries:
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `seaborn`
+- `scikit-learn`
 
-Dependencies
-The following Python libraries are required to run the code:
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/heart-disease-prediction.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd heart-disease-prediction
+   ```
+3. Install the required dependencies:
+   ```bash
+   pip install pandas numpy matplotlib seaborn scikit-learn
+   ```
 
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
+## Usage
+1. Ensure the `HeartDisease.csv` dataset is in the project directory.
+2. Run the main script:
+   ```bash
+   python heart_disease_prediction.py
+   ```
+3. The script will:
+   - Load and preprocess the dataset
+   - Train and evaluate multiple machine learning models
+   - Output performance metrics (accuracy, classification report, confusion matrix)
+   - Make predictions on sample data using the Support Vector Classifier
 
-Install the dependencies using:
-pip install pandas numpy matplotlib seaborn scikit-learn
+## Key Observations
+- Features such as `chest_pain`, `rest_ecg`, `exer_angina`, `slope`, `ca`, and `thalassemia` are significantly correlated with the target variable.
+- The Support Vector Classifier achieved the highest accuracy among the tested models, making it the most effective for this task.
 
-Dataset
-The dataset (HeartDisease.csv) contains features such as:
+## File Structure
+```
+heart-disease-prediction/
+│
+├── heart_disease_prediction.py  # Main Python script
+├── HeartDisease.csv             # Dataset (not included in repo, must be added)
+├── README.md                    # Project documentation
+```
 
-age: Age of the patient
-gender: Gender of the patient
-chest_pain: Chest pain type
-rest_bps: Resting blood pressure
-cholestrol: Cholesterol level
-fasting_blood_sugar: Fasting blood sugar level
-rest_ecg: Resting electrocardiographic results
-thalach: Maximum heart rate achieved
-exer_angina: Exercise-induced angina
-old_peak: ST depression induced by exercise
-slope: Slope of the peak exercise ST segment
-ca: Number of major vessels colored by fluoroscopy
-thalassemia: Thalassemia type
-target: Presence of heart disease (0 = No, 1 = Yes)
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit (`git commit -m 'Add feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a pull request.
 
-How to Run
-
-Ensure all dependencies are installed.
-Place the HeartDisease.csv dataset in the same directory as the script.
-Run the Python script:python heart_disease_prediction.py
-
-
-The script will output model performance metrics and predictions for sample inputs.
-
-Conclusion
-This project demonstrates the application of machine learning to predict heart disease. The Support Vector Classifier achieved the best performance among the tested models, making it a suitable choice for this classification task.
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
